@@ -1,43 +1,51 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+const slides = [
+  { title: "Enhanced Customer Experience", desc: "Empower your customers with a seamless and personalized experience." },
+  { title: "Multi-Channel Integration", desc: "Connect with your customers across various touchpoints." },
+  { title: "Secure Backoffice Banking", desc: "Ensure compliance and security in all backoffice operations." },
+];
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      title="Open Digital"
+      description="Smarter Lending. Safer Experience. Seamless Access"
+    >
+      {/* Banner Section */}
+      <header className={styles.banner}>
+        <h1>Open Digital</h1>
+        <p className={styles.tagline}>Smart, secure, and customer-first wallet management system</p>
+      </header>
+
+      {/* Intro / Description */}
+      <section className={styles.intro}>
+        <p>
+          Open Digital is a wallet management software designed to streamline loan management, 
+          repayments, and backoffice operations for financial institutions.
+        </p>
+      </section>
+
+      {/* Capability Cards */}
+      <section className={styles.cardsSection}>
+        {slides.map((slide, idx) => (
+          <div className={styles.card} key={idx}>
+            <h3>{slide.title}</h3>
+            <p>{slide.desc}</p>
+          </div>
+        ))}
+      </section>
     </Layout>
   );
 }

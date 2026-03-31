@@ -1,23 +1,61 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
+/* Banner */
+.banner {
+  background-color: #002366; /* dark blue */
+  color: #ffcc00;            /* dark yellow for title */
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 120px 20px 80px 20px;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.buttons {
+.banner .tagline {
+  color: #ffffff; /* white tagline */
+  font-size: 1.5rem;
+}
+
+/* Intro / Description */
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto 80px auto;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Cards Section */
+.cardsSection {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* Individual Card */
+.card {
+  background: whitesmoke;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #002366; /* dark blue */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
 }
