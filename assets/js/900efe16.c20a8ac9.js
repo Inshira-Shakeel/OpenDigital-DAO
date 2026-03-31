@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdao=globalThis.webpackChunkdao||[]).push([[9347],{246(a){a.exports=JSON.parse('{"metadata":{"permalink":"/OpenDigital-DAO/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
