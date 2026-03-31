@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdao=globalThis.webpackChunkdao||[]).push([[135],{2719(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"backoffice"}')}}]);
